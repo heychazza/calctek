@@ -3,27 +3,23 @@
 namespace App\Http\Controllers;
 
 use App\Data\TickerTapeData;
+use App\Http\Requests\TickerTape\CreateRequest;
 use App\Models\TickerTape;
 use Exception;
-use Illuminate\Http\Request;
 use jcubic\Expression;
 
-class CalculateController extends Controller
+class TickerTapeController extends Controller
 {
     public function index()
     {
         return inertia('Calculate', [
             'result' => session('result'),
-            'history' => TickerTapeData::collect(TickerTape::all())
+            'history' => TickerTapeData::collect(TickerTape::latest()->get())
         ]);
     }
 
-    public function store(Request $request, Expression $expression)
+    public function store(CreateRequest $request, Expression $expression)
     {
-        $request->validate([
-            'expression' => 'required|string'
-        ]);
-
         $expr = $request->get('expression');
         try {
             $result = $expression->evaluate($expr);
