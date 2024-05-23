@@ -18,11 +18,11 @@
                     </button>
                 </form>
 
-                <div class="grid grid-cols-4 gap-4 mb-6">
+                <div class="grid grid-cols-4 gap-4">
                     <CalculatorBtn v-for="btn in calculatorBtns" :key="btn" @click="appendToCalculation(btn)">{{ btn }}</CalculatorBtn>
                 </div>
 
-                <div v-if="result" class="text-xl">
+                <div v-if="result" class="text-xl mt-6">
                     Result: <span class="font-semibold">{{ result }}</span>
                 </div>
                 <p v-show="calculatorForm.hasErrors && calculatorForm.errors.expression" class="text-red-600">
