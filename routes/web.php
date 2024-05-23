@@ -1,8 +1,8 @@
 <?php
 
-use App\Actions\GenerateResult;
+use App\Http\Controllers\CalculateController;
 use Illuminate\Support\Facades\Route;
 
-Route::get('/', function () {
-    return GenerateResult::execute('2 + 2');
-});
+Route::get('/', [CalculateController::class, 'index']);
+
+Route::post('/calculate', [CalculateController::class, 'store'])->name('calculate');
