@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Data\TickerTapeData;
 use App\Models\TickerTape;
 use Exception;
 use Illuminate\Http\Request;
@@ -13,7 +14,7 @@ class CalculateController extends Controller
     {
         return inertia('Calculate', [
             'result' => session('result'),
-            'history' => TickerTape::query()->latest()->limit(10)->get()
+            'history' => TickerTapeData::collect(TickerTape::all())
         ]);
     }
 

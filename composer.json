@@ -9,7 +9,9 @@
         "inertiajs/inertia-laravel": "^1.2",
         "jcubic/expression": "^2.0",
         "laravel/framework": "^11.0",
-        "laravel/tinker": "^2.9"
+        "laravel/tinker": "^2.9",
+        "spatie/laravel-data": "^4.6",
+        "spatie/laravel-typescript-transformer": "^2.4"
     },
     "require-dev": {
         "fakerphp/faker": "^1.23",
