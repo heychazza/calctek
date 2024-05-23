@@ -12,4 +12,5 @@
 This is a simple calculator demo project (named CalcTek) built with Laravel 11. It has a simple UI and can perform basic arithmetic operations.
 
 Here's a video example:
-![Demo Video](https://github.com/heychazza/calctek/raw/main/.github/demo.mp4)
+
+[![Demo Video](https://img.youtube.com/vi/38km-is99cM/0.jpg)](https://youtube.com/shorts/38km-is99cM?si=tIC5r0dr66BWWGWk)
